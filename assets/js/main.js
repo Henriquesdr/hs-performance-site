@@ -165,7 +165,7 @@ var CONFIG = { whatsapp: '5531988691313' };
 
   /* ---------------- topo, barra de leitura e voltar ao topo ---------------- */
   var top = $('#top'), prog = $('#prog'), totop = $('.totop'), totopFill = $('#totopFill'), lastY = 0, ticking = false;
-  var heroArt = $('#heroArt'), aboutBg = $('.about-bg');
+  var heroArt = $('#heroArt'), aboutBg = $('.about-logo');
   function onScroll(){
     var y = scrollY, max = Math.max(1, document.documentElement.scrollHeight - innerHeight), p = Math.min(1, y / max);
     top.classList.toggle('scrolled', y > 30);
