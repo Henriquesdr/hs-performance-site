@@ -17,25 +17,41 @@
   <meta property="og:locale" content="pt_BR">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&family=Josefin+Sans:wght@400;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&family=Josefin+Sans:wght@400;600&display=swap">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-<header>
+<!-- ABERTURA -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader-in">
+    <svg class="loader-mono" viewBox="-2 0 376 312"><defs><linearGradient id="gL" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="372" y2="312"><stop offset="0" stop-color="#f3dfae"/><stop offset=".5" stop-color="#c49a4a"/><stop offset="1" stop-color="#e2c487"/></linearGradient></defs>
+      <g stroke="url(#gL)"><path pathLength="1" d="M19 8V308"/><path pathLength="1" d="M34 256A158 158 0 0 1 344 299V308"/><path pathLength="1" d="M185 168V308"/><path pathLength="1" d="M194 140V100A78 78 0 1 1 349 113"/></g></svg>
+    <span class="loader-name"><b>HS</b> Performance</span>
+    <span class="loader-bar"><i></i></span>
+  </div>
+  <span class="loader-veil"></span>
+</div>
+
+<div class="cursor" aria-hidden="true"><span class="cursor-dot"></span><span class="cursor-ring"><em></em></span></div>
+<div class="scrollbar" aria-hidden="true"><i id="prog"></i></div>
+
+<header id="top">
   <div class="wrap" style="position:relative">
     <div class="bar">
       <a class="brand" href="#inicio" aria-label="HS Performance">
-        <img src="assets/img/logo.webp" alt=""><span><b>HS</b> Performance</span>
+        <svg class="brand-mono" viewBox="-2 0 376 312" aria-hidden="true"><g><path d="M19 8V308"/><path d="M34 256A158 158 0 0 1 344 299V308"/><path d="M185 168V308"/><path d="M194 140V100A78 78 0 1 1 349 113"/></g></svg>
+        <span><b>HS</b> Performance</span>
       </a>
       <ul class="menu" id="menu">
         <li>
           <button class="mbtn" aria-expanded="false"><span data-t="nav1">Serviços</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg></button>
           <div class="drop">
-            <a href="#recursos" data-tab="0"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></i><span><b data-t="s1">Site institucional</b><small data-t="s1d">A vitrine completa da sua empresa</small></span></a>
-            <a href="#recursos" data-tab="0"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg></i><span><b data-t="s2">Landing page</b><small data-t="s2d">Uma página feita para converter</small></span></a>
-                        <a href="#recursos" data-tab="1"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg></i><span><b data-t="s4">Redesign de site</b><small data-t="s4d">Seu site antigo, moderno de novo</small></span></a>
-            <a href="#recursos" data-tab="3"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg></i><span><b data-t="s5">SEO e velocidade</b><small data-t="s5d">Apareça no Google e carregue rápido</small></span></a>
-            <a href="#recursos" data-tab="4"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V7z"/></svg></i><span><b data-t="s6">Manutenção e suporte</b><small data-t="s6d">Seu site sempre no ar e atualizado</small></span></a>
+            <a href="#servicos" data-panel="0"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></i><span><b data-t="s1">Site institucional</b><small data-t="s1d">A vitrine completa da sua empresa</small></span></a>
+            <a href="#servicos" data-panel="1"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg></i><span><b data-t="s2">Landing page</b><small data-t="s2d">Uma página feita para converter</small></span></a>
+            <a href="#servicos" data-panel="2"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg></i><span><b data-t="s4">Redesign de site</b><small data-t="s4d">Seu site antigo, moderno de novo</small></span></a>
+            <a href="#servicos" data-panel="3"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></svg></i><span><b data-t="s5">SEO e velocidade</b><small data-t="s5d">Apareça no Google e carregue rápido</small></span></a>
+            <a href="#servicos" data-panel="4"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 4.5-3.4 8-8 9-4.6-1-8-4.5-8-9V7z"/></svg></i><span><b data-t="s6">Manutenção e suporte</b><small data-t="s6d">Seu site sempre no ar e atualizado</small></span></a>
           </div>
         </li>
         <li>
@@ -47,45 +63,62 @@
             <a href="#segmentos"><i>◇</i><span><b data-t="g4">Comércio e varejo</b><small data-t="g4d">Vitrine de produtos e contato</small></span></a>
           </div>
         </li>
+        <li><a class="mbtn" href="#processo" data-t="nav5">Como funciona</a></li>
         <li><a class="mbtn" href="#portfolio" data-t="nav3">Portfólio</a></li>
-        <li>
-          <button class="mbtn" aria-expanded="false"><span data-t="nav4">A empresa</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg></button>
-          <div class="drop">
-            <a href="#sobre"><i><img src="assets/img/logo.webp" alt="" style="width:60%"></i><span><b data-t="a1">Sobre nós</b><small data-t="a1d">Quem é a HS Performance</small></span></a>
-            <a href="#recursos"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 6h16M4 12h10M4 18h6"/></svg></i><span><b data-t="a2">O que entregamos</b><small data-t="a2d">Recursos de cada site</small></span></a>
-            <a href="#contato"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></i><span><b data-t="a3">Contato</b><small data-t="a3d">WhatsApp, e-mail e Instagram</small></span></a>
-          </div>
-        </li>
+        <li><a class="mbtn" href="#sobre" data-t="a1">Sobre nós</a></li>
         <li class="lang" role="group" aria-label="Idioma"><button type="button" data-lang="pt" aria-pressed="true">PT</button><button type="button" data-lang="en" aria-pressed="false">EN</button></li>
-        <li><a class="btn btn-dark m-cta" href="#contato"><span data-t="cta">Solicitar orçamento</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
+        <li><a class="btn btn-gold m-cta" href="#contato"><span data-t="cta">Solicitar orçamento</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></li>
       </ul>
-      <a class="btn btn-dark" href="#contato"><span data-t="cta">Solicitar orçamento</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <a class="btn btn-gold magnet bar-cta" href="#contato"><span data-t="cta">Solicitar orçamento</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span></button>
     </div>
   </div>
 </header>
 
 <main id="inicio">
   <!-- HERO -->
-  <section class="hero">
-    <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span><span class="blob b4"></span><span class="sq"></span>
+  <section class="hero dark" id="hero">
+    <div class="hero-bg" aria-hidden="true"><span class="hero-pattern"></span><span class="hero-spot" id="heroSpot"></span><span class="hero-glow"></span><span class="grain"></span></div>
     <div class="wrap hero-in">
-      <div class="label rv" data-t="h-lab">O futuro do seu negócio começa online</div>
-      <h1 class="rv d1" data-t="h1">O site que sua empresa <span class="hl">merece</span>, com <span class="hl-o">performance</span> de verdade.</h1>
-      <p class="sub rv d2" data-t="h-sub">Hoje, a primeira impressão da sua empresa acontece em uma tela. Quem não está na internet perde clientes, todos os dias, para quem está. Esteja onde seu cliente procura e seja a empresa que ele encontra, confia e escolhe.</p>
-      <div class="hero-cta rv d3">
-        <a class="btn btn-dark" href="#contato"><span data-t="cta">Solicitar orçamento</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-        <a class="btn btn-line" href="#recursos" style="padding-right:1.5em" data-t="h-cta2">Ver o que entregamos</a>
+      <div class="hero-copy">
+        <div class="eyebrow rv"><span class="line"></span><span data-t="h-lab">O futuro do seu negócio começa online</span></div>
+        <h1 class="rv d1" data-t="h1">O site que sua empresa <em class="serif">merece</em>, com performance de verdade.</h1>
+        <p class="sub rv d2" data-t="h-sub">Hoje, a primeira impressão da sua empresa acontece em uma tela. Quem não está na internet perde clientes, todos os dias, para quem está. Esteja onde seu cliente procura e seja a empresa que ele encontra, confia e escolhe.</p>
+        <div class="hero-cta rv d3">
+          <a class="btn btn-gold magnet" href="#contato"><span data-t="cta">Solicitar orçamento</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+          <a class="link-line" href="#servicos" data-t="h-cta2">Ver o que entregamos</a>
+        </div>
+        <ul class="hero-stats rv d3">
+          <li><strong>50+</strong><span data-t="hs1">segmentos atendidos</span></li>
+          <li><strong>&lt;2s</strong><span data-t="hs2">meta de carregamento</span></li>
+          <li><strong>100%</strong><span data-t="hs3">adaptado ao celular</span></li>
+        </ul>
+      </div>
+      <div class="hero-art" id="heroArt" aria-hidden="true">
+        <div class="hero-orbit"><span></span><span></span><span></span></div>
+        <svg class="hero-mono" viewBox="-2 0 376 312"><defs><linearGradient id="gH" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="372" y2="312"><stop offset="0" stop-color="#f6e4b4"/><stop offset=".38" stop-color="#c49a4a"/><stop offset=".62" stop-color="#ecd29a"/><stop offset="1" stop-color="#8a6528"/></linearGradient><filter id="glow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="10"/></filter></defs>
+          <g class="mono-glow" stroke="#c49a4a" filter="url(#glow)"><path d="M19 8V308"/><path d="M34 256A158 158 0 0 1 344 299V308"/><path d="M185 168V308"/><path d="M194 140V100A78 78 0 1 1 349 113"/></g>
+          <g class="mono-draw" stroke="url(#gH)"><path pathLength="1" d="M19 8V308"/><path pathLength="1" d="M34 256A158 158 0 0 1 344 299V308"/><path pathLength="1" d="M185 168V308"/><path pathLength="1" d="M194 140V100A78 78 0 1 1 349 113"/></g>
+        </svg>
+        <div class="seal"><svg viewBox="0 0 200 200"><defs><path id="circ" d="M100 100m-80 0a80 80 0 1 1 160 0a80 80 0 1 1-160 0"/></defs><text><textPath href="#circ" id="sealTxt">HS PERFORMANCE · SITES QUE GERAM CLIENTES · </textPath></text></svg>
+          <svg class="seal-mono" viewBox="-2 0 376 312"><g><path d="M19 8V308"/><path d="M34 256A158 158 0 0 1 344 299V308"/><path d="M185 168V308"/><path d="M194 140V100A78 78 0 1 1 349 113"/></g></svg></div>
+        <span class="chip chip-a"><b>01</b><span data-t="hc1">Design sob medida</span></span>
+        <span class="chip chip-b"><b>02</b><span data-t="hc2">Pronto para o Google</span></span>
+        <span class="chip chip-c"><b>03</b><span data-t="hc3">WhatsApp integrado</span></span>
       </div>
     </div>
+    <a class="scroll-hint" href="#intro" aria-label="Rolar para baixo"><span></span></a>
   </section>
 
-  <!-- INTRO: phone + counters -->
-  <section class="intro">
+  <!-- FAIXA DOURADA -->
+  <div class="band" aria-hidden="true"><div class="band-track" id="band"></div></div>
+
+  <!-- INTRO -->
+  <section class="intro" id="intro">
     <div class="wrap intro-grid">
-      <div class="stage">
+      <div class="stage" data-reveal>
         <div class="phone"><div class="screen">
-          <div class="scr-top"><img src="assets/img/logo.webp" alt=""><b data-t="ph1">Sua empresa, pronta para ser encontrada.</b><em></em></div>
+          <div class="scr-top"><svg class="brand-mono" viewBox="-2 0 376 312"><g><path d="M19 8V308"/><path d="M34 256A158 158 0 0 1 344 299V308"/><path d="M185 168V308"/><path d="M194 140V100A78 78 0 1 1 349 113"/></g></svg><b data-t="ph1">Sua empresa, pronta para ser encontrada.</b><em></em></div>
           <div class="scr-body">
             <div class="scr-card"><i></i><span data-t="ph2">Nossos serviços</span></div>
             <div class="scr-card"><i></i><span data-t="ph3">Onde estamos</span></div>
@@ -97,102 +130,172 @@
         <div class="float-chip fc2"><span class="dot"></span><div><span data-t="fc2">Novo contato</span><small data-t="fc2s">via formulário do site</small></div></div>
       </div>
       <div>
-        <div class="label" data-t="i-lab">Por que ter um site profissional</div>
-        <h2 data-t="i-h">Seu cliente procura no Google <span class="hl-o">antes</span> de ligar.</h2>
-        <p class="txt" data-t="i-p">Um site bem feito é o que separa a empresa que é lembrada da que é ignorada. Ele trabalha por você 24 horas: apresenta seus serviços, transmite confiança e leva o cliente direto ao seu WhatsApp.</p>
+        <div class="eyebrow" data-reveal><span class="line"></span><span data-t="i-lab">Por que ter um site profissional</span></div>
+        <h2 data-reveal data-t="i-h">Seu cliente procura no Google <em class="serif">antes</em> de ligar.</h2>
+        <p class="txt" data-reveal data-t="i-p">Um site bem feito é o que separa a empresa que é lembrada da que é ignorada. Ele trabalha por você 24 horas: apresenta seus serviços, transmite confiança e leva o cliente direto ao seu WhatsApp.</p>
         <div class="counters">
-          <div class="counter"><strong><span class="count" data-to="24">24</span><sup>h</sup></strong><p data-t="c1">por dia, sete dias por semana, seu site apresentando a empresa</p></div>
-          <div class="counter"><strong><span class="count" data-to="100">100</span><sup>%</sup></strong><p data-t="c2">adaptado para celular, tablet e computador</p></div>
+          <div class="counter" data-reveal><strong><span class="count" data-to="24">24</span><sup>h</sup></strong><p data-t="c1">por dia, sete dias por semana, seu site apresentando a empresa</p></div>
+          <div class="counter" data-reveal><strong><span class="count" data-to="100">100</span><sup>%</sup></strong><p data-t="c2">adaptado para celular, tablet e computador</p></div>
         </div>
-        <a class="btn btn-dark" href="#recursos"><span data-t="more">Saiba mais</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a class="btn btn-dark magnet" href="#servicos" data-reveal><span data-t="more">Saiba mais</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       </div>
     </div>
   </section>
 
-  <!-- MARQUEE -->
-  <section class="dark mq-sec">
+  <!-- MANIFESTO -->
+  <section class="manifest-sec">
     <div class="wrap">
-      <div class="label" style="color:var(--gold)" data-t="m-lab">Para todo tipo de negócio</div>
-      <h2 data-t="m-h">Sites sob medida para <span class="hl-o">mais de <span class="count" data-to="50">50</span> segmentos</span>.</h2>
+      <svg class="manifest-mono" viewBox="-2 0 376 312" aria-hidden="true"><g><path d="M19 8V308"/><path d="M34 256A158 158 0 0 1 344 299V308"/><path d="M185 168V308"/><path d="M194 140V100A78 78 0 1 1 349 113"/></g></svg>
+      <p class="manifest" id="manifest" data-t="man">Seu site é o primeiro funcionário que o cliente conhece. Ele precisa receber bem, explicar rápido e levar à conversa, todos os dias, a qualquer hora.</p>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="services-sec" id="servicos">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow" data-reveal><span class="line"></span><span data-t="sv-lab">Serviços</span></div>
+        <h2 data-reveal data-t="sv-h">Do primeiro site ao <em class="serif">redesign</em> completo.</h2>
+        <p data-reveal data-t="sv-p">Cada projeto é desenhado para o seu negócio, sem modelos prontos. Escolha o serviço e solicite um orçamento sem compromisso.</p>
+      </div>
+      <div class="panels" id="panels">
+        <article class="panel is-open" tabindex="0" data-cursor="Abrir" data-svc="c1">
+          <svg class="panel-mono" viewBox="-2 0 376 312" aria-hidden="true"><g><path d="M19 8V308"/><path d="M34 256A158 158 0 0 1 344 299V308"/><path d="M185 168V308"/><path d="M194 140V100A78 78 0 1 1 349 113"/></g></svg>
+          <div class="panel-bar"><span class="panel-num">01</span><h3 data-t="s1">Site institucional</h3></div>
+          <div class="panel-body"><p data-t="p1">A vitrine completa da sua empresa, com páginas para apresentar quem você é, o que faz e como falar com você.</p>
+            <ul><li data-t="p1a">Início, sobre, serviços e contato</li><li data-t="p1b">Integração com WhatsApp, mapa e redes</li><li data-t="p1c">Textos revisados para a web</li></ul>
+            <a class="btn btn-gold btn-sm" href="#contato" data-pick="c1"><span data-t="cta">Solicitar orçamento</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+          <span class="panel-plus" aria-hidden="true"></span>
+        </article>
+        <article class="panel" tabindex="0" data-cursor="Abrir">
+          <svg class="panel-mono" viewBox="-2 0 376 312" aria-hidden="true"><g><path d="M19 8V308"/><path d="M34 256A158 158 0 0 1 344 299V308"/><path d="M185 168V308"/><path d="M194 140V100A78 78 0 1 1 349 113"/></g></svg>
+          <div class="panel-bar"><span class="panel-num">02</span><h3 data-t="s2">Landing page</h3></div>
+          <div class="panel-body"><p data-t="p2">Uma página única e objetiva, feita para transformar visitantes em contatos. Ideal para campanhas e anúncios.</p>
+            <ul><li data-t="p2a">Estrutura focada em conversão</li><li data-t="p2b">Pronta para Google Ads e Meta Ads</li><li data-t="p2c">Formulário e WhatsApp em destaque</li></ul>
+            <a class="btn btn-gold btn-sm" href="#contato" data-pick="c2"><span data-t="cta">Solicitar orçamento</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+          <span class="panel-plus" aria-hidden="true"></span>
+        </article>
+        <article class="panel" tabindex="0" data-cursor="Abrir">
+          <svg class="panel-mono" viewBox="-2 0 376 312" aria-hidden="true"><g><path d="M19 8V308"/><path d="M34 256A158 158 0 0 1 344 299V308"/><path d="M185 168V308"/><path d="M194 140V100A78 78 0 1 1 349 113"/></g></svg>
+          <div class="panel-bar"><span class="panel-num">03</span><h3 data-t="s4">Redesign de site</h3></div>
+          <div class="panel-body"><p data-t="p3">Seu site está antigo, lento ou não funciona bem no celular? Recriamos com visual atual e tecnologia leve.</p>
+            <ul><li data-t="p3a">Novo visual alinhado à sua marca</li><li data-t="p3b">Conteúdo atual aproveitado</li><li data-t="p3c">Troca sem perder o seu endereço</li></ul>
+            <a class="btn btn-gold btn-sm" href="#contato" data-pick="c4"><span data-t="cta">Solicitar orçamento</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+          <span class="panel-plus" aria-hidden="true"></span>
+        </article>
+        <article class="panel" tabindex="0" data-cursor="Abrir">
+          <svg class="panel-mono" viewBox="-2 0 376 312" aria-hidden="true"><g><path d="M19 8V308"/><path d="M34 256A158 158 0 0 1 344 299V308"/><path d="M185 168V308"/><path d="M194 140V100A78 78 0 1 1 349 113"/></g></svg>
+          <div class="panel-bar"><span class="panel-num">04</span><h3 data-t="s5">SEO e velocidade</h3></div>
+          <div class="panel-body"><p data-t="p4">Ajustes técnicos e de conteúdo para seu site carregar rápido e aparecer melhor nas buscas.</p>
+            <ul><li data-t="p4a">Otimização de imagens e código</li><li data-t="p4b">Cadastro no Google Meu Negócio</li><li data-t="p4c">Search Console e Analytics</li></ul>
+            <a class="btn btn-gold btn-sm" href="#contato" data-pick="c5"><span data-t="cta">Solicitar orçamento</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+          <span class="panel-plus" aria-hidden="true"></span>
+        </article>
+        <article class="panel" tabindex="0" data-cursor="Abrir">
+          <svg class="panel-mono" viewBox="-2 0 376 312" aria-hidden="true"><g><path d="M19 8V308"/><path d="M34 256A158 158 0 0 1 344 299V308"/><path d="M185 168V308"/><path d="M194 140V100A78 78 0 1 1 349 113"/></g></svg>
+          <div class="panel-bar"><span class="panel-num">05</span><h3 data-t="s6">Manutenção e suporte</h3></div>
+          <div class="panel-body"><p data-t="p5">Atualizações, segurança e backups para seu site seguir sempre no ar, sem dor de cabeça.</p>
+            <ul><li data-t="p5a">Atualização de textos e fotos</li><li data-t="p5b">Domínio, hospedagem e SSL</li><li data-t="p5c">Suporte direto pelo WhatsApp</li></ul>
+            <a class="btn btn-gold btn-sm" href="#contato" data-pick="c6"><span data-t="cta">Solicitar orçamento</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
+          <span class="panel-plus" aria-hidden="true"></span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE SEGMENTOS -->
+  <section class="dark mq-sec pattern" id="spotA">
+    <span class="spot-layer" aria-hidden="true"></span>
+    <div class="wrap">
+      <div class="eyebrow center" data-reveal><span class="line"></span><span data-t="m-lab">Para todo tipo de negócio</span><span class="line"></span></div>
+      <h2 data-reveal data-t="m-h">Sites sob medida para <em class="serif">mais de <span class="count" data-to="50">50</span> segmentos</em>.</h2>
     </div>
     <div class="marquee" aria-hidden="true">
       <div class="track" id="t1"></div>
       <div class="track rev" id="t2"></div>
     </div>
-    <a class="btn btn-gold" href="#contato"><span data-t="m-cta">Fale sobre o seu negócio</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+    <a class="btn btn-gold magnet" href="#contato"><span data-t="m-cta">Fale sobre o seu negócio</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
   </section>
 
-  <!-- STORY: segments -->
+  <!-- SEGMENTOS -->
   <section class="story" id="segmentos">
     <div class="wrap">
       <div class="story-head">
-        <div><div class="label" data-t="st-lab">Design sob medida</div><h2 style="margin-top:16px" data-t="st-h">Cada segmento tem <span class="hl">a sua cara</span>.</h2></div>
-        <p data-t="st-p">Uma clínica precisa transmitir cuidado. Um restaurante, apetite. Um escritório, credibilidade. Por isso nenhum site da HS Performance parte de um modelo pronto.</p>
-      </div>
-      <div class="trio">
-        <div class="tile t-a"><div class="mini"><div class="mt"><em></em><em></em></div><div class="mb"><span></span><span></span><span></span></div></div><div class="cap"><span data-t="g1">Saúde e clínicas</span><small data-t="ex">Exemplo</small></div></div>
-        <div class="tile t-b"><div class="mini"><div class="mt"><em></em><em></em></div><div class="mb"><span></span><span></span><span></span></div></div><div class="cap"><span data-t="g2">Restaurantes e food</span><small data-t="ex">Exemplo</small></div></div>
-        <div class="tile t-c"><div class="mini"><div class="mt"><em></em><em></em></div><div class="mb"><span></span><span></span><span></span></div></div><div class="cap"><span data-t="g3">Escritórios e serviços</span><small data-t="ex">Exemplo</small></div></div>
+        <div><div class="eyebrow" data-reveal><span class="line"></span><span data-t="st-lab">Design sob medida</span></div><h2 data-reveal data-t="st-h">Cada segmento tem <em class="serif">a sua cara</em>.</h2></div>
+        <p data-reveal data-t="st-p">Uma clínica precisa transmitir cuidado. Um restaurante, apetite. Um escritório, credibilidade. Por isso nenhum site da HS Performance parte de um modelo pronto.</p>
       </div>
       <div class="story-foot">
-        <div class="big-count"><strong><span class="count" data-to="0">0</span></strong><p data-t="st-c">modelos prontos. Todo layout é desenhado do zero para a sua marca.</p></div>
-        <a class="btn btn-dark" href="#portfolio"><span data-t="more">Saiba mais</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <div class="big-count" data-reveal><strong><span class="count" data-to="0">0</span></strong><p data-t="st-c">modelos prontos. Todo layout é desenhado do zero para a sua marca.</p></div>
+        <div class="big-count" data-reveal><strong>&lt;<span class="count" data-to="2">2</span>s</strong><p data-t="sp-c">é a meta de carregamento de cada página que entregamos.</p></div>
+        <div class="big-count" data-reveal><strong><span class="count" data-to="90">90</span>+</strong><p data-t="sp-c2">é a nota mínima que buscamos no PageSpeed do Google.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- STORY 2: speed -->
-  <section class="story" style="padding-top:0">
-    <div class="wrap">
-      <div class="story-head">
-        <div><div class="label" data-t="sp-lab">Performance no nome</div><h2 style="margin-top:16px" data-t="sp-h">Rápido no celular, <span class="hl">bem posicionado</span> no Google.</h2></div>
-        <p data-t="sp-p">Mais da metade das visitas chega pelo celular, e quem espera demais vai embora. Desenvolvemos cada site leve e otimizado desde a primeira linha de código.</p>
-      </div>
-      <div class="story-foot">
-        <div class="big-count"><strong>&lt;<span class="count" data-to="2">2</span>s</strong><p data-t="sp-c">é a meta de carregamento de cada página que entregamos.</p></div>
-        <div class="big-count"><strong><span class="count" data-to="90">90</span>+</strong><p data-t="sp-c2">é a nota mínima que buscamos no PageSpeed do Google.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MISSION -->
-  <section class="dark mission" id="sobre">
-    <div class="wrap mission-in">
-      <div class="badge-logo"><img src="assets/img/logo.webp" alt="Logo HS Performance"></div>
-      <div>
-        <div class="we" data-t="we">nós somos a <span>HS Performance.</span></div>
-        <p data-t="we-p">Um estúdio de criação de sites para empresas que querem ser levadas a sério na internet. Unimos visual profissional e tecnologia leve, com atendimento próximo e linguagem simples. Você fala direto com quem desenvolve o seu site, do briefing à publicação.</p>
-        <a class="btn btn-gold" href="#contato"><span data-t="we-cta">Vamos conversar?</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <!-- SOBRE: FUNDO COM A LOGO -->
+  <section class="about" id="sobre">
+    <div class="about-bg" aria-hidden="true"></div>
+    <div class="wrap about-in">
+      <div class="about-card">
+        <div class="eyebrow" data-reveal><span class="line"></span><span data-t="ab-lab">Sobre a HS Performance</span></div>
+        <div class="we" data-reveal data-t="we">nós somos a <em class="serif">HS Performance.</em></div>
+        <p data-reveal data-t="we-p">Um estúdio de criação de sites para empresas que querem ser levadas a sério na internet. Unimos visual profissional e tecnologia leve, com atendimento próximo e linguagem simples. Você fala direto com quem desenvolve o seu site, do briefing à publicação.</p>
+        <ul class="values" data-reveal>
+          <li><b data-t="v-1">Design autoral</b><span data-t="v-1d">Nada de modelos prontos</span></li>
+          <li><b data-t="v-2">Tecnologia leve</b><span data-t="v-2d">Rápido em qualquer aparelho</span></li>
+          <li><b data-t="v-3">Atendimento direto</b><span data-t="v-3d">Sem intermediários</span></li>
+        </ul>
+        <a class="btn btn-dark magnet" href="#contato" data-reveal><span data-t="we-cta">Vamos conversar?</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       </div>
     </div>
   </section>
 
-  <!-- PORTFOLIO STRIP -->
+  <!-- COMO FUNCIONA -->
+  <section class="dark journey pattern" id="processo">
+    <div class="wrap journey-in">
+      <div class="journey-head">
+        <div class="eyebrow" data-reveal><span class="line"></span><span data-t="j-lab">Como funciona</span></div>
+        <h2 data-reveal data-t="j-h">Do primeiro contato ao <em class="serif">site no ar</em>.</h2>
+        <p data-reveal data-t="j-p">Você acompanha e aprova cada etapa antes de seguirmos para a próxima.</p>
+        <a class="btn btn-gold magnet" href="#contato" data-reveal><span data-t="j-cta">Começar meu projeto</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      </div>
+      <ol class="steps" id="steps">
+        <li class="steps-line" aria-hidden="true"><i id="stepsFill"></i></li>
+        <li class="step"><span class="step-dot">1</span><div><h3 data-t="j1">Briefing</h3><p data-t="j1d">Conversamos sobre sua empresa, seus clientes e o objetivo do site.</p></div></li>
+        <li class="step"><span class="step-dot">2</span><div><h3 data-t="j2">Proposta</h3><p data-t="j2d">Você recebe o escopo, o prazo e o orçamento detalhado.</p></div></li>
+        <li class="step"><span class="step-dot">3</span><div><h3 data-t="j3">Layout</h3><p data-t="j3d">Criamos o visual do site e ajustamos junto com você até aprovar.</p></div></li>
+        <li class="step"><span class="step-dot">4</span><div><h3 data-t="j4">Desenvolvimento</h3><p data-t="j4d">Programamos o site rápido, seguro e adaptado para celular.</p></div></li>
+        <li class="step"><span class="step-dot">5</span><div><h3 data-t="j5">Publicação</h3><p data-t="j5d">Colocamos no ar no seu domínio e acompanhamos os primeiros dias.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- PORTFÓLIO -->
   <section class="gallery" id="portfolio">
     <div class="wrap">
       <div class="gal-head">
-        <div><div class="label" data-t="p-lab">Portfólio</div><h2 style="margin-top:16px" data-t="p-h">Os primeiros cases estão <span class="hl">a caminho</span>.</h2></div>
-        <div class="gal-nav"><button type="button" id="prev" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button type="button" id="next" aria-label="Próximo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
+        <div><div class="eyebrow" data-reveal><span class="line"></span><span data-t="p-lab">Portfólio</span></div><h2 data-reveal data-t="p-h">Os primeiros cases estão <em class="serif">a caminho</em>.</h2></div>
+        <div class="gal-nav"><button type="button" id="prev" class="magnet" aria-label="Anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button><button type="button" id="next" class="magnet" aria-label="Próximo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div>
       </div>
-      <div class="strip" id="strip" tabindex="0" aria-label="Projetos">
+      <div class="strip" id="strip" tabindex="0" aria-label="Projetos" data-cursor="Arraste">
         <div class="card-p first">
-          <span class="tag" style="background:var(--gold);color:var(--ink);justify-self:start" data-t="p-tag">Agenda aberta</span>
+          <span class="tag gold" data-t="p-tag">Agenda aberta</span>
           <div style="display:grid;gap:12px"><h3 data-t="p-ft">Sua empresa pode ser um dos primeiros projetos.</h3><p data-t="p-fp">Os primeiros clientes recebem atenção dedicada em cada etapa.</p></div>
           <a class="btn btn-gold" href="#contato" style="justify-self:start"><span data-t="p-fc">Quero o meu</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
         </div>
-        <div class="card-p"><div class="frame"><img src="assets/img/logo.webp" alt=""></div><div class="meta"><b>Projeto 01</b><span class="tag" data-t="soon">Em breve</span></div></div>
-        <div class="card-p"><div class="frame"><img src="assets/img/logo.webp" alt=""></div><div class="meta"><b>Projeto 02</b><span class="tag" data-t="soon">Em breve</span></div></div>
-        <div class="card-p"><div class="frame"><img src="assets/img/logo.webp" alt=""></div><div class="meta"><b>Projeto 03</b><span class="tag" data-t="soon">Em breve</span></div></div>
-        <div class="card-p"><div class="frame"><img src="assets/img/logo.webp" alt=""></div><div class="meta"><b>Projeto 04</b><span class="tag" data-t="soon">Em breve</span></div></div>
+        <div class="card-p"><div class="frame"><svg class="brand-mono" viewBox="-2 0 376 312"><g><path d="M19 8V308"/><path d="M34 256A158 158 0 0 1 344 299V308"/><path d="M185 168V308"/><path d="M194 140V100A78 78 0 1 1 349 113"/></g></svg></div><div class="meta"><b>Projeto 01</b><span class="tag" data-t="soon">Em breve</span></div></div>
+        <div class="card-p"><div class="frame"><svg class="brand-mono" viewBox="-2 0 376 312"><g><path d="M19 8V308"/><path d="M34 256A158 158 0 0 1 344 299V308"/><path d="M185 168V308"/><path d="M194 140V100A78 78 0 1 1 349 113"/></g></svg></div><div class="meta"><b>Projeto 02</b><span class="tag" data-t="soon">Em breve</span></div></div>
+        <div class="card-p"><div class="frame"><svg class="brand-mono" viewBox="-2 0 376 312"><g><path d="M19 8V308"/><path d="M34 256A158 158 0 0 1 344 299V308"/><path d="M185 168V308"/><path d="M194 140V100A78 78 0 1 1 349 113"/></g></svg></div><div class="meta"><b>Projeto 03</b><span class="tag" data-t="soon">Em breve</span></div></div>
+        <div class="card-p"><div class="frame"><svg class="brand-mono" viewBox="-2 0 376 312"><g><path d="M19 8V308"/><path d="M34 256A158 158 0 0 1 344 299V308"/><path d="M185 168V308"/><path d="M194 140V100A78 78 0 1 1 349 113"/></g></svg></div><div class="meta"><b>Projeto 04</b><span class="tag" data-t="soon">Em breve</span></div></div>
       </div>
     </div>
   </section>
 
-  <!-- FEATURE TABS -->
-  <section class="dark features" id="recursos">
+  <!-- RECURSOS (ABAS) -->
+  <section class="dark features pattern" id="recursos">
     <div class="wrap">
-      <span class="label" style="color:var(--gold)" data-t="f-lab">O que entregamos</span>
-      <h2 data-t="f-h">Tudo o que um site <span class="hl-o">profissional</span> precisa ter.</h2>
+      <div class="eyebrow center" data-reveal><span class="line"></span><span data-t="f-lab">O que entregamos</span><span class="line"></span></div>
+      <h2 data-reveal data-t="f-h">Tudo o que um site <em class="serif">profissional</em> precisa ter.</h2>
       <div class="tabs" role="tablist" id="tabs">
         <button class="tab" role="tab" aria-selected="true" aria-controls="p0" id="tb0"><span data-t="f1">Design sob medida</span><span class="prog"></span></button>
         <button class="tab" role="tab" aria-selected="false" aria-controls="p1" id="tb1"><span data-t="f2">Celular em primeiro lugar</span><span class="prog"></span></button>
@@ -200,7 +303,7 @@
         <button class="tab" role="tab" aria-selected="false" aria-controls="p3" id="tb3"><span data-t="f4">Google e SEO</span><span class="prog"></span></button>
         <button class="tab" role="tab" aria-selected="false" aria-controls="p4" id="tb4"><span data-t="f5">WhatsApp e contato</span><span class="prog"></span></button>
       </div>
-      <div class="panel-wrap">
+      <div class="panel-wrap" data-reveal>
         <div class="panel-txt" id="ptxt" aria-live="polite">
           <span class="num" id="pnum">01 / 05</span>
           <h3 id="ph"></h3>
@@ -227,13 +330,13 @@
           </div>
           <div id="p3" role="tabpanel" aria-labelledby="tb3" hidden>
             <div class="win"><div class="win-bar"><i></i><i></i><i></i></div><div class="win-c">
-              <div class="g-q">🔍 <span data-t="v4">clínica odontológica em Betim</span></div>
-              <div class="g-res"><small>www.suaempresa.com.br</small><b data-t="v5">Sua Empresa | Atendimento em Betim</b><p data-t="v6">Agende sua consulta pelo WhatsApp. Atendimento de segunda a sábado.</p></div>
-              <div class="g-res" style="opacity:.45"><small>www.concorrente.com.br</small><b>Concorrente</b></div>
+              <div class="g-q">🔍 <span data-t="v4">clínica odontológica perto de mim</span></div>
+              <div class="g-res"><small>www.suaempresa.com.br</small><b data-t="v5">Sua Empresa | Atendimento na sua região</b><p data-t="v6">Agende sua consulta pelo WhatsApp. Atendimento de segunda a sábado.</p></div>
+              <div class="g-res" style="opacity:.45"><small>www.concorrente.com.br</small><b data-t="v9">Concorrente</b></div>
             </div></div>
           </div>
           <div id="p4" role="tabpanel" aria-labelledby="tb4" hidden>
-            <div class="chat"><div class="hd"><i><img src="assets/img/logo.webp" alt=""></i>Sua Empresa</div>
+            <div class="chat"><div class="hd"><i><svg class="brand-mono" viewBox="-2 0 376 312"><g><path d="M19 8V308"/><path d="M34 256A158 158 0 0 1 344 299V308"/><path d="M185 168V308"/><path d="M194 140V100A78 78 0 1 1 349 113"/></g></svg></i><span data-t="v10">Sua Empresa</span></div>
               <div class="msg me" data-t="v7">Olá! Vi o site de vocês e gostaria de um orçamento.</div>
               <div class="msg" data-t="v8">Olá! Que bom ter você aqui. Me conta o que você precisa?</div>
             </div>
@@ -243,29 +346,29 @@
     </div>
   </section>
 
-  <!-- TRUST BAND -->
+  <!-- GARANTIAS -->
   <section class="trust">
     <div class="wrap trust-grid">
-      <div class="trust-item"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></i><div><b data-t="tr1">Certificado SSL</b><small data-t="tr1d">Cadeado de segurança</small></div></div>
-      <div class="trust-item"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></i><div><b data-t="tr2">Domínio .com.br</b><small data-t="tr2d">Registro e configuração</small></div></div>
-      <div class="trust-item"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></i><div><b data-t="tr3">Google Meu Negócio</b><small data-t="tr3d">Sua empresa no mapa</small></div></div>
-      <div class="trust-item"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></i><div><b data-t="tr4">Responsivo</b><small data-t="tr4d">Perfeito no celular</small></div></div>
-      <div class="trust-item"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"/></svg></i><div><b data-t="tr5">Suporte direto</b><small data-t="tr5d">Pelo WhatsApp</small></div></div>
+      <div class="trust-item" data-reveal><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></i><div><b data-t="tr1">Certificado SSL</b><small data-t="tr1d">Cadeado de segurança</small></div></div>
+      <div class="trust-item" data-reveal><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></i><div><b data-t="tr2">Domínio .com.br</b><small data-t="tr2d">Registro e configuração</small></div></div>
+      <div class="trust-item" data-reveal><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></i><div><b data-t="tr3">Google Meu Negócio</b><small data-t="tr3d">Sua empresa no mapa</small></div></div>
+      <div class="trust-item" data-reveal><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></i><div><b data-t="tr4">Responsivo</b><small data-t="tr4d">Perfeito no celular</small></div></div>
+      <div class="trust-item" data-reveal><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"/></svg></i><div><b data-t="tr5">Suporte direto</b><small data-t="tr5d">Pelo WhatsApp</small></div></div>
     </div>
   </section>
 
-  <!-- DUO CTA -->
+  <!-- DUAS CHAMADAS -->
   <section class="duo">
     <div class="wrap duo-grid">
-      <div class="cta-card c-ref">
-        <div class="label" style="color:var(--cocoa)" data-t="r-lab">Indicação</div>
+      <div class="cta-card c-ref" data-reveal>
+        <div class="eyebrow"><span class="line"></span><span data-t="r-lab">Indicação</span></div>
         <h3 data-t="r-h">Conhece uma empresa que ainda não tem site?</h3>
         <p data-t="r-p">Indique a HS Performance para quem precisa aparecer na internet. A gente cuida do resto.</p>
-        <a class="btn btn-dark" href="#contato"><span data-t="r-cta">Indicar uma empresa</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a class="btn btn-dark magnet" href="#contato"><span data-t="r-cta">Indicar uma empresa</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
       </div>
-      <div class="cta-card c-brand">
+      <div class="cta-card c-brand" data-reveal>
         <div class="left">
-          <div class="label" style="color:var(--gold)" data-t="b-lab">Sua identidade</div>
+          <div class="eyebrow"><span class="line"></span><span data-t="b-lab">Sua identidade</span></div>
           <h3 data-t="b-h">Um site com as cores da sua marca.</h3>
           <p data-t="b-p">Escolha uma cor e veja o site se adaptar na hora.</p>
           <div class="swatches" id="sw" role="group" aria-label="Cores">
@@ -275,7 +378,6 @@
             <button type="button" style="--c:#5b78d6" data-b="#b9c8ff" data-b2="#1b2a55" aria-pressed="false" aria-label="Azul"></button>
             <button type="button" style="--c:#c25b8a" data-b="#f5bcd4" data-b2="#4a1832" aria-pressed="false" aria-label="Vinho"></button>
           </div>
-          <a class="btn btn-gold" href="#contato"><span data-t="more">Saiba mais</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
         </div>
         <div class="brand-demo" id="demo">
           <div class="h"><b data-t="bd1">Bem-vindo à sua empresa</b><em data-t="cta">Solicitar orçamento</em></div>
@@ -285,20 +387,21 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
-  <section class="contact" id="contato" style="padding-top:0">
+  <!-- CONTATO -->
+  <section class="contact" id="contato">
     <div class="wrap contact-grid">
       <div>
-        <div class="label" data-t="ct-lab">Contato</div>
-        <h2 data-t="ct-h">Vamos tirar o site da sua empresa <span class="hl">do papel</span>?</h2>
-        <p class="lead" data-t="ct-p">Conte um pouco sobre o seu projeto. Respondemos com uma proposta sob medida, sem compromisso.</p>
+        <div class="eyebrow" data-reveal><span class="line"></span><span data-t="ct-lab">Contato</span></div>
+        <h2 data-reveal data-t="ct-h">Vamos tirar o site da sua empresa <em class="serif">do papel</em>?</h2>
+        <p class="lead" data-reveal data-t="ct-p">Conte um pouco sobre o seu projeto. Respondemos com uma proposta sob medida, sem compromisso.</p>
         <div class="channels">
-          <div class="channel"><div class="ch-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></div><div><small>WhatsApp</small><a class="v" href="https://wa.me/5531988691313" target="_blank" rel="noopener">+55 (31) 98869-1313</a></div><button class="copy" type="button" data-copy="+55 31 98869-1313" data-t="copy">Copiar</button></div>
-          <div class="channel"><div class="ch-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div><div><small>E-mail</small><span class="v">hsperformancedigital@gmail.com</span></div><button class="copy" type="button" data-copy="hsperformancedigital@gmail.com" data-t="copy">Copiar</button></div>
-          <div class="channel"><div class="ch-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor"/></svg></div><div><small>Instagram</small><a class="v" href="https://instagram.com/hsperformancedigital" target="_blank" rel="noopener">@hsperformancedigital</a></div><button class="copy" type="button" data-copy="@hsperformancedigital" data-t="copy">Copiar</button></div>
+          <div class="channel" data-reveal><div class="ch-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></div><div><small>WhatsApp</small><a class="v nowrap" href="https://wa.me/5531988691313" target="_blank" rel="noopener">+55 (31) 98869-1313</a></div><button class="copy" type="button" data-copy="+55 31 98869-1313" data-t="copy">Copiar</button></div>
+          <div class="channel" data-reveal><div class="ch-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div><div><small>E-mail</small><span class="v">hsperformancedigital<wbr>@gmail.com</span></div><button class="copy" type="button" data-copy="hsperformancedigital@gmail.com" data-t="copy">Copiar</button></div>
+          <div class="channel" data-reveal><div class="ch-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor"/></svg></div><div><small>Instagram</small><a class="v" href="https://instagram.com/hsperformancedigital" target="_blank" rel="noopener">@hsperformancedigital</a></div><button class="copy" type="button" data-copy="@hsperformancedigital" data-t="copy">Copiar</button></div>
         </div>
       </div>
-      <form id="quote" novalidate>
+      <form id="quote" novalidate data-reveal>
+        <svg class="form-mono" viewBox="-2 0 376 312" aria-hidden="true"><g><path d="M19 8V308"/><path d="M34 256A158 158 0 0 1 344 299V308"/><path d="M185 168V308"/><path d="M194 140V100A78 78 0 1 1 349 113"/></g></svg>
         <h3 data-t="cta">Solicitar orçamento</h3>
         <p data-t="fm-p">Preencha e envie direto para o nosso WhatsApp.</p>
         <div class="row">
@@ -309,7 +412,7 @@
           <div class="chips" id="chips">
             <input type="radio" name="svc" id="c1" value="s1" checked><label for="c1" data-t="s1">Site institucional</label>
             <input type="radio" name="svc" id="c2" value="s2"><label for="c2" data-t="s2">Landing page</label>
-                        <input type="radio" name="svc" id="c4" value="s4"><label for="c4" data-t="s4">Redesign de site</label>
+            <input type="radio" name="svc" id="c4" value="s4"><label for="c4" data-t="s4">Redesign de site</label>
             <input type="radio" name="svc" id="c5" value="s5"><label for="c5" data-t="s5">SEO e velocidade</label>
             <input type="radio" name="svc" id="c6" value="s6"><label for="c6" data-t="s6">Manutenção e suporte</label>
           </div>
@@ -317,32 +420,31 @@
         <div class="field"><label for="f-site" data-t="fm4">Já tem site? (opcional)</label><input id="f-site" placeholder="www.suaempresa.com.br"></div>
         <div class="field"><label for="f-msg" data-t="fm5">Conte sobre o projeto</label><textarea id="f-msg"></textarea></div>
         <p class="form-err" id="err" hidden data-t="fm-err">Preencha seu nome para enviarmos a solicitação.</p>
-        <a class="btn btn-gold" id="send" href="https://wa.me/5531988691313" target="_blank" rel="noopener"><span data-t="fm-send">Enviar pelo WhatsApp</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+        <a class="btn btn-gold btn-full" id="send" href="https://wa.me/5531988691313" target="_blank" rel="noopener"><span data-t="fm-send">Enviar pelo WhatsApp</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
         <p class="form-note" data-t="fm-note">Abre o WhatsApp com sua mensagem pronta para enviar.</p>
       </form>
     </div>
   </section>
 </main>
 
-<footer class="dark">
+<footer class="dark foot pattern">
   <div class="wrap">
+    <div class="foot-big" data-reveal><span data-t="ft-big">Vamos construir o futuro do seu negócio?</span><a class="btn btn-gold magnet" href="#contato"><span data-t="cta">Solicitar orçamento</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a></div>
     <div class="foot-top">
       <div class="foot-brand">
-        <a class="brand" href="#inicio"><img src="assets/img/logo.webp" alt=""><span><b>HS</b> Performance</span></a>
+        <a class="brand" href="#inicio"><svg class="brand-mono" viewBox="-2 0 376 312" aria-hidden="true"><g><path d="M19 8V308"/><path d="M34 256A158 158 0 0 1 344 299V308"/><path d="M185 168V308"/><path d="M194 140V100A78 78 0 1 1 349 113"/></g></svg><span><b>HS</b> Performance</span></a>
         <p data-t="ft-p">Sites profissionais, rápidos e prontos para o Google.</p>
-        <a class="btn btn-gold" href="#contato"><span data-t="cta">Solicitar orçamento</span><span class="arr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
-      </div>
-      <div><h4 data-t="nav1">Serviços</h4><ul>
-        <li><a href="#recursos" data-t="s1">Site institucional</a></li><li><a href="#recursos" data-t="s2">Landing page</a></li><li><a href="#recursos" data-t="s4">Redesign de site</a></li><li><a href="#recursos" data-t="s5">SEO e velocidade</a></li><li><a href="#recursos" data-t="s6">Manutenção e suporte</a></li></ul></div>
-      <div><h4 data-t="nav4">A empresa</h4><ul>
-        <li><a href="#sobre" data-t="a1">Sobre nós</a></li><li><a href="#segmentos" data-t="nav2">Segmentos</a></li><li><a href="#portfolio" data-t="nav3">Portfólio</a></li><li><a href="#recursos" data-t="a2">O que entregamos</a></li></ul></div>
-      <div><h4 data-t="a3">Contato</h4><ul>
-        <li><a href="https://wa.me/5531988691313" target="_blank" rel="noopener" style="white-space:nowrap">+55 (31) 98869-1313</a></li><li><span style="color:var(--mute-d);font-size:.92rem;word-break:break-all">hsperformancedigital@gmail.com</span></li><li><a href="https://instagram.com/hsperformancedigital" target="_blank" rel="noopener">@hsperformancedigital</a></li></ul>
-        <div class="socials" style="margin-top:18px">
+        <div class="socials">
           <a href="https://instagram.com/hsperformancedigital" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
           <a href="https://wa.me/5531988691313" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a9 9 0 0 1-13.5 7.8L3 21l1.2-4.5A9 9 0 1 1 21 12z"/></svg></a>
         </div>
       </div>
+      <div><h4 data-t="nav1">Serviços</h4><ul>
+        <li><a href="#servicos" data-panel="0" data-t="s1">Site institucional</a></li><li><a href="#servicos" data-panel="1" data-t="s2">Landing page</a></li><li><a href="#servicos" data-panel="2" data-t="s4">Redesign de site</a></li><li><a href="#servicos" data-panel="3" data-t="s5">SEO e velocidade</a></li><li><a href="#servicos" data-panel="4" data-t="s6">Manutenção e suporte</a></li></ul></div>
+      <div><h4 data-t="nav4">A empresa</h4><ul>
+        <li><a href="#sobre" data-t="a1">Sobre nós</a></li><li><a href="#processo" data-t="nav5">Como funciona</a></li><li><a href="#segmentos" data-t="nav2">Segmentos</a></li><li><a href="#portfolio" data-t="nav3">Portfólio</a></li></ul></div>
+      <div><h4 data-t="a3">Contato</h4><ul>
+        <li><a class="nowrap" href="https://wa.me/5531988691313" target="_blank" rel="noopener">+55 (31) 98869-1313</a></li><li><span class="foot-mail">hsperformancedigital<wbr>@gmail.com</span></li><li><a href="https://instagram.com/hsperformancedigital" target="_blank" rel="noopener">@hsperformancedigital</a></li></ul></div>
     </div>
     <div class="foot-bot">
       <span data-t="ft-c">© 2026 HS Performance. Todos os direitos reservados.</span>
@@ -351,7 +453,8 @@
   </div>
 </footer>
 
-<a class="wa" href="https://wa.me/5531988691313" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></a>
+<a class="totop" href="#inicio" aria-label="Voltar ao topo"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="20"/><circle class="totop-fill" id="totopFill" cx="22" cy="22" r="20"/></svg><span>↑</span></a>
+<a class="wa magnet" href="https://wa.me/5531988691313" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm4.5 12.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg></a>
 
 <script src="assets/js/main.js"></script>
 </body>
