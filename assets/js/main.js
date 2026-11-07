@@ -15,7 +15,7 @@ var CONFIG = { whatsapp: '5531988691313' };
   /* ---------------- textos em inglês ---------------- */
   var EN = {
     nav1:'Services',nav2:'Industries',nav3:'Portfolio',nav4:'Company',nav5:'How it works',cta:'Request a quote',more:'Learn more',copy:'Copy',
-    s1:'Business website',s1d:'Your company’s complete showcase',s2:'Landing page',s2d:'One page built to convert',s4:'Website redesign',s4d:'Make your old site modern again',s5:'SEO & speed',s5d:'Show up on Google and load fast',s6:'Maintenance & support',s6d:'Always online and up to date',
+    s1:'Business website',s1d:'Your company’s complete showcase',s2:'Landing page',s2d:'One page built to convert',s4:'Website redesign',s4d:'Make your old site modern again',s5:'SEO & speed',s5d:'Show up on Google and load fast',s6:'Maintenance & support',s6d:'Always online and up to date',s7:'Paid traffic',s7d:'Google Ads and Meta Ads',
     g1:'Health & clinics',g1d:'Bookings and trust',g2:'Restaurants & food',g2d:'Menus and orders',g3:'Offices & services',g3d:'Credibility and leads',g4:'Retail & commerce',g4d:'Product showcase and contact',
     a1:'About us',a3:'Contact',
     'h-lab':'Your business’s future starts online',
@@ -28,17 +28,18 @@ var CONFIG = { whatsapp: '5531988691313' };
     'i-p':'A well-built website is what separates the company people remember from the one they ignore. It works for you around the clock: it presents your services, builds trust and sends customers straight to your WhatsApp.',
     c1:'a day, seven days a week, your site presenting your company',c2:'adapted to phone, tablet and desktop',
     man:'Your website is the first employee your customer meets. It needs to welcome them, explain quickly and lead to a conversation, every day, at any hour.',
-    'sv-lab':'Services','sv-h':'From your first website to a complete <em class="serif">redesign</em>.','sv-p':'Every project is designed for your business, with no ready-made templates. Choose a service and request a free quote.',
+    'sv-lab':'Services','sv-h':'From your first website to the <em class="serif">ads</em> that bring in customers.','sv-p':'Every project is designed for your business, with no ready-made templates. Choose a service and request a free quote.',
     p1:'Your company’s complete showcase, with pages that present who you are, what you do and how to reach you.',p1a:'Home, about, services and contact',p1b:'WhatsApp, map and social media built in',p1c:'Copy edited for the web',
     p2:'A single, focused page built to turn visitors into leads. Ideal for campaigns and ads.',p2a:'Conversion-focused structure',p2b:'Ready for Google Ads and Meta Ads',p2c:'Form and WhatsApp front and center',
     p3:'Is your website old, slow or broken on mobile? We rebuild it with a modern look and lightweight technology.',p3a:'New look aligned with your brand',p3b:'Your current content reused',p3c:'Switch without losing your address',
     p4:'Technical and content improvements so your site loads fast and ranks better in search.',p4a:'Image and code optimization',p4b:'Google Business Profile setup',p4c:'Search Console and Analytics',
-    p5:'Updates, security and backups to keep your site online, hassle-free.',p5a:'Text and photo updates',p5b:'Domain, hosting and SSL',p5c:'Direct support on WhatsApp',
+    p5:'Updates, security and backups to keep your site online, hassle-free.',
+    p6:'Ads on Google Ads and Meta Ads that bring the right people to your website and your WhatsApp, with spending closely monitored.',p6a:'Google Ads: Search, Maps and YouTube',p6b:'Meta Ads: Instagram and Facebook',p6c:'Clear performance reports',p5a:'Text and photo updates',p5b:'Domain, hosting and SSL',p5c:'Direct support on WhatsApp',
     'm-lab':'For every kind of business','m-h':'Tailor-made websites for <em class="serif">more than <span class="count" data-to="50">50</span> industries</em>.','m-cta':'Tell us about your business',
     'st-lab':'Tailor-made design','st-h':'Every industry has <em class="serif">its own look</em>.','st-p':'A clinic needs to convey care. A restaurant, appetite. A law office, credibility. That is why no HS Performance website starts from a template.',ex:'Example',
     'st-c':'templates. Every layout is designed from scratch for your brand.','sp-c':'is the load-time target for every page we deliver.','sp-c2':'is the minimum Google PageSpeed score we aim for.',
     'ab-lab':'About HS Performance',we:'we are <em class="serif">HS Performance.</em>',
-    'we-p':'A web design studio for companies that want to be taken seriously online. We combine a professional look with lightweight technology, close support and plain language. You talk directly to the person building your site, from briefing to launch.',
+    'we-p':'A web design and paid traffic studio for companies that want to be taken seriously online. We combine a professional look, lightweight technology and well-targeted ads with close support and plain language. You talk directly to the person building your site, from briefing to launch.',
     'v-1':'Original design','v-1d':'No ready-made templates','v-2':'Lightweight tech','v-2d':'Fast on any device','v-3':'Direct contact','v-3d':'No middlemen','we-cta':'Shall we talk?',
     'j-lab':'How it works','j-h':'From first contact to a <em class="serif">live website</em>.','j-p':'You follow and approve every step before we move on to the next.','j-cta':'Start my project',
     j1:'Briefing',j1d:'We talk about your company, your customers and the goal of the site.',j2:'Proposal',j2d:'You receive the scope, timeline and a detailed quote.',j3:'Layout',j3d:'We design the look of the site and refine it with you until you approve.',j4:'Development',j4d:'We build the site fast, secure and mobile-ready.',j5:'Launch',j5d:'We put it live on your domain and follow the first days.',
@@ -51,7 +52,7 @@ var CONFIG = { whatsapp: '5531988691313' };
     'b-lab':'Your identity','b-h':'A website in your brand’s colors.','b-p':'Pick a color and watch the site adapt instantly.',bd1:'Welcome to your company',
     'ct-lab':'Contact','ct-h':'Ready to take your company’s website <em class="serif">off the drawing board</em>?','ct-p':'Tell us a little about your project. We reply with a tailored proposal, no strings attached.',
     'fm-p':'Fill it in and send it straight to our WhatsApp.',fm1:'Your name',fm2:'Company',fm3:'Service you need',fm4:'Already have a website? (optional)',fm5:'Tell us about the project','fm-err':'Please enter your name so we can send the request.','fm-send':'Send via WhatsApp','fm-note':'Opens WhatsApp with your message ready to send.',
-    'ft-big':'Shall we build the future of your business?','ft-p':'Professional, fast, Google-ready websites.','ft-c':'© 2026 HS Performance. All rights reserved.'
+    'ft-big':'Shall we build the future of your business?','ft-p':'Professional websites and paid traffic for businesses.','ft-c':'© 2026 HS Performance. All rights reserved.'
   };
   var FEAT = {
     pt:[
@@ -74,8 +75,8 @@ var CONFIG = { whatsapp: '5531988691313' };
     en:['Clinics','Restaurants','Law firms','Accounting','Gyms','Beauty salons','Real estate','Architecture','Dentistry','Pet shops','Construction','Fashion stores','Schools','Auto repair','Psychology','Hotels','Aesthetics','Events','Consulting','Auto parts','Physiotherapy','Nutrition','Veterinary clinics','Barbershops','Coffee shops','Bakeries','Engineering','Woodworking','Solar energy','Language schools','Photography','Travel agencies','Insurance','Logistics','Churches','Nonprofits']
   };
   var BAND = {
-    pt:['Site institucional','Landing page','Redesign de site','SEO e velocidade','Manutenção e suporte','Design sob medida'],
-    en:['Business website','Landing page','Website redesign','SEO & speed','Maintenance & support','Tailor-made design']
+    pt:['Site institucional','Landing page','Redesign de site','SEO e velocidade','Tráfego pago','Manutenção e suporte'],
+    en:['Business website','Landing page','Website redesign','SEO & speed','Paid traffic','Maintenance & support']
   };
   var SEAL = { pt:'HS PERFORMANCE · SITES QUE GERAM CLIENTES · ', en:'HS PERFORMANCE · WEBSITES THAT WIN CLIENTS · ' };
   var MAN_EM = { pt:['receber','explicar','conversa'], en:['welcome','explain','conversation'] };

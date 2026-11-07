@@ -647,3 +647,12 @@ form>p{color:var(--mute-d);font-size:.92rem;margin-top:-8px}
 .copy{min-height:36px}
 .lang button{padding:10px 12px;min-height:36px}
 .scroll-hint{width:34px;margin-left:-17px;border-radius:17px}
+
+/* painéis de serviço: com 6 serviços, o título dos painéis fechados fica na vertical */
+@media (min-width:961px){
+  .panels{gap:12px}
+  .panel{padding:28px 22px}
+  .panel.is-open{flex:3.6}
+  .panel:not(.is-open) .panel-bar{position:static}
+  .panel:not(.is-open) .panel-bar h3{position:absolute;left:24px;bottom:30px;transform:rotate(180deg);writing-mode:vertical-rl;white-space:nowrap;font-size:1.2rem;line-height:1}
+}
